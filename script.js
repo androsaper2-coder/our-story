@@ -46,5 +46,6 @@ function burst(){
 }
 document.querySelector("#heartBtn").addEventListener("click",()=>{
   burst();
-  document.querySelector("#loveMessage").textContent="وأنا لسه هختارك… كل يوم، من جديد. ❤️";
+  document.querySelector("#loveMessage").textContent="وأنا لسه هختارك… كل يوم، من جديد
+    بحبك. ❤️";
 });
