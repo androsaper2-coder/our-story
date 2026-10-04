@@ -327,3 +327,230 @@
     height: 225px;
   }
 }
+/* =================================
+   FIXED HEART GALLERY ❤️
+================================= */
+
+.heart-gallery {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px 35px;
+}
+
+.heart-memory {
+  text-align: center;
+}
+
+/* زر الصورة */
+.heart-photo {
+  position: relative;
+  display: block;
+  width: 230px;
+  height: 205px;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  transform: rotate(-45deg);
+  transition: transform .35s ease;
+
+  filter: drop-shadow(0 15px 18px rgba(100, 50, 60, .18));
+}
+
+/*
+   القلب بيتعمل من:
+   مربع + دائرتين
+*/
+.heart-photo::before {
+  content: "";
+  position: absolute;
+
+  width: 145px;
+  height: 145px;
+
+  left: 42px;
+  top: 42px;
+
+  background: #fff;
+
+  z-index: 1;
+
+  border-radius: 8px;
+}
+
+/* الدائرة اليمين */
+.heart-photo::after {
+  content: "";
+
+  position: absolute;
+
+  width: 115px;
+  height: 115px;
+
+  left: 23px;
+  top: 0;
+
+  background: #fff;
+
+  border-radius: 50%;
+
+  box-shadow: 115px 0 0 #fff;
+
+  z-index: 0;
+}
+
+/*
+   الصورة نفسها
+*/
+.heart-photo img {
+  position: absolute;
+
+  width: 205px;
+  height: 205px;
+
+  left: 12px;
+  top: 12px;
+
+  object-fit: cover;
+
+  z-index: 5;
+
+  /*
+    قلب حقيقي
+  */
+  clip-path: polygon(
+    50% 92%,
+    43% 85%,
+    35% 78%,
+    25% 69%,
+    15% 59%,
+    8% 48%,
+    5% 37%,
+    7% 25%,
+    14% 16%,
+    24% 11%,
+    34% 12%,
+    42% 17%,
+    50% 26%,
+    58% 17%,
+    66% 12%,
+    76% 11%,
+    86% 16%,
+    93% 25%,
+    95% 37%,
+    92% 48%,
+    85% 59%,
+    75% 69%,
+    65% 78%,
+    57% 85%
+  );
+
+  transform: rotate(45deg) scale(1.15);
+}
+
+/* حركة بسيطة */
+.heart-photo:hover {
+  transform: rotate(-45deg) scale(1.08);
+}
+
+/* الكلام */
+.memory-info {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.memory-info span {
+  color: #b2767e;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.memory-info h3 {
+  margin: 7px 0 3px;
+  font-size: 19px;
+}
+
+.memory-info p {
+  margin: 0;
+  color: #806e72;
+  font-size: 13px;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 800px) {
+
+  .heart-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 65px 5px;
+  }
+
+  .heart-photo {
+    width: 155px;
+    height: 145px;
+  }
+
+  .heart-photo img {
+    width: 145px;
+    height: 145px;
+  }
+
+  .heart-photo::before {
+    width: 100px;
+    height: 100px;
+    left: 27px;
+    top: 27px;
+  }
+
+  .heart-photo::after {
+    width: 78px;
+    height: 78px;
+    left: 15px;
+  }
+
+  .memory-info h3 {
+    font-size: 16px;
+  }
+
+  .memory-info p {
+    font-size: 11px;
+  }
+}
+
+
+@media (max-width: 430px) {
+
+  .heart-gallery {
+    gap: 60px 0;
+  }
+
+  .heart-photo {
+    width: 140px;
+    height: 130px;
+  }
+
+  .heart-photo img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .heart-photo::before {
+    width: 90px;
+    height: 90px;
+    left: 25px;
+    top: 25px;
+  }
+
+  .heart-photo::after {
+    width: 70px;
+    height: 70px;
+    left: 12px;
+  }
+}
