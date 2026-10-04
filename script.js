@@ -22,8 +22,18 @@ function updateCounter(){
 updateCounter();
 setInterval(updateCounter,1000);
 
+const song = document.getElementById("loveSong");
+
 document.querySelector("#startBtn").addEventListener("click",()=>{
-  document.querySelector("#story").scrollIntoView({behavior:"smooth"});
+  song.volume = 0.65;
+
+  song.play().catch(error => {
+    console.log("Audio could not start:", error);
+  });
+
+  document.querySelector("#story").scrollIntoView({
+    behavior:"smooth"
+  });
 });
 
 const observer = new IntersectionObserver(entries=>{
