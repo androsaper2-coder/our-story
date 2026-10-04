@@ -53,7 +53,134 @@ function burst(){
     wrap.appendChild(h);
     setTimeout(()=>h.remove(),5500);
   }
+}/* =========================
+   HEART GALLERY LIGHTBOX
+========================= */
+
+const memories = Array.from(
+  document.querySelectorAll(".heart-photo")
+);
+
+const lightbox = document.getElementById("photoLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxDate = document.getElementById("lightboxDate");
+const lightboxCaption = document.getElementById("lightboxCaption");
+
+const closeLightbox = document.getElementById("lightboxClose");
+const nextButton = document.getElementById("nextPhoto");
+const prevButton = document.getElementById("prevPhoto");
+
+let currentPhoto = 0;
+
+
+/* فتح الصورة */
+
+function openPhoto(index) {
+
+  currentPhoto = index;
+
+  const photo = memories[currentPhoto];
+
+  lightboxImage.src = photo.dataset.image;
+
+  lightboxDate.textContent = photo.dataset.date;
+
+  lightboxCaption.textContent = photo.dataset.caption;
+
+  lightbox.classList.add("active");
+
+  document.body.style.overflow = "hidden";
 }
+
+
+/* قفل الصورة */
+
+function closePhoto() {
+
+  lightbox.classList.remove("active");
+
+  document.body.style.overflow = "";
+}
+
+
+/* الصورة التالية */
+
+function nextPhoto() {
+
+  currentPhoto++;
+
+  if (currentPhoto >= memories.length) {
+    currentPhoto = 0;
+  }
+
+  openPhoto(currentPhoto);
+}
+
+
+/* الصورة السابقة */
+
+function previousPhoto() {
+
+  currentPhoto--;
+
+  if (currentPhoto < 0) {
+    currentPhoto = memories.length - 1;
+  }
+
+  openPhoto(currentPhoto);
+}
+
+
+/* الضغط على الصور */
+
+memories.forEach((photo, index) => {
+
+  photo.addEventListener("click", () => {
+    openPhoto(index);
+  });
+
+});
+
+
+/* الأزرار */
+
+closeLightbox.addEventListener("click", closePhoto);
+
+nextButton.addEventListener("click", nextPhoto);
+
+prevButton.addEventListener("click", previousPhoto);
+
+
+/* الضغط خارج الصورة يقفلها */
+
+lightbox.addEventListener("click", (event) => {
+
+  if (event.target === lightbox) {
+    closePhoto();
+  }
+
+});
+
+
+/* الكيبورد */
+
+document.addEventListener("keydown", (event) => {
+
+  if (!lightbox.classList.contains("active")) return;
+
+  if (event.key === "Escape") {
+    closePhoto();
+  }
+
+  if (event.key === "ArrowRight") {
+    nextPhoto();
+  }
+
+  if (event.key === "ArrowLeft") {
+    previousPhoto();
+  }
+
+});
 document.querySelector("#heartBtn").addEventListener("click",()=>{
   burst();
   document.querySelector("#loveMessage").textContent="وأنا لسه هختارك… كل يوم، من جديد. ❤️";
