@@ -554,3 +554,395 @@
     left: 12px;
   }
 }
+/* =========================================
+   FINAL HEART GALLERY FIX ❤️
+   ========================================= */
+
+/* ترتيب الجاليري */
+.heart-gallery {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px 40px;
+}
+
+/* كل صورة */
+.heart-memory {
+  text-align: center;
+}
+
+/* زر الصورة */
+.heart-photo {
+  position: relative;
+
+  width: 240px;
+  height: 220px;
+
+  margin: 0 auto;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  /* مهم: مفيش دوران */
+  transform: none !important;
+
+  filter: drop-shadow(0 15px 20px rgba(120, 60, 70, 0.18));
+
+  transition: transform 0.3s ease,
+              filter 0.3s ease;
+}
+
+/* إلغاء الدوائر البيضا القديمة */
+.heart-photo::before,
+.heart-photo::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* الصورة */
+.heart-photo img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /* قلب متناسق */
+  clip-path: polygon(
+    50% 95%,
+    43% 88%,
+    35% 81%,
+    27% 74%,
+    19% 66%,
+    12% 57%,
+    7% 48%,
+    5% 39%,
+    6% 30%,
+    10% 22%,
+    17% 16%,
+    25% 13%,
+    33% 14%,
+    40% 18%,
+    46% 25%,
+    50% 31%,
+    54% 25%,
+    60% 18%,
+    67% 14%,
+    75% 13%,
+    83% 16%,
+    90% 22%,
+    94% 30%,
+    95% 39%,
+    93% 48%,
+    88% 57%,
+    81% 66%,
+    73% 74%,
+    65% 81%,
+    57% 88%
+  );
+
+  /* مهم جدًا */
+  transform: none !important;
+
+  transition: transform 0.4s ease;
+}
+
+/* Hover */
+.heart-photo:hover {
+  transform: scale(1.06) !important;
+
+  filter: drop-shadow(
+    0 20px 30px rgba(120, 60, 70, 0.28)
+  );
+}
+
+.heart-photo:hover img {
+  transform: scale(1.04) !important;
+}
+
+
+/* =========================================
+   الكلام تحت الصور
+   ========================================= */
+
+.memory-info {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.memory-info span {
+  color: #b2767e;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.memory-info h3 {
+  margin: 7px 0 3px;
+  font-size: 19px;
+}
+
+.memory-info p {
+  margin: 0;
+  color: #806e72;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   LIGHTBOX
+   الصورة الكبيرة لازم تكون صورة عادية
+   ========================================= */
+
+.photo-lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  background: rgba(20, 12, 15, 0.94);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.3s ease,
+              visibility 0.3s ease;
+}
+
+.photo-lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* محتوى الصورة */
+.lightbox-content {
+  max-width: 850px;
+  width: 90%;
+
+  text-align: center;
+}
+
+
+/* الصورة الكبيرة */
+
+.big-heart {
+  width: auto !important;
+  height: auto !important;
+
+  margin: 0 auto !important;
+
+  position: relative;
+
+  transform: none !important;
+
+  filter: none !important;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+/* إلغاء شكل القلب تمامًا في الصورة الكبيرة */
+
+.big-heart img {
+  display: block;
+
+  width: auto !important;
+  height: auto !important;
+
+  max-width: min(80vw, 750px);
+  max-height: 70vh;
+
+  object-fit: contain;
+
+  /* أهم سطر */
+  clip-path: none !important;
+
+  transform: none !important;
+
+  border-radius: 14px;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+
+/* الكلام تحت الصورة الكبيرة */
+
+.lightbox-text {
+  margin-top: 20px;
+
+  color: white;
+}
+
+.lightbox-text span {
+  color: #e7b5bd;
+  font-size: 13px;
+}
+
+.lightbox-text h3 {
+  margin: 7px 0;
+
+  font-size: 18px;
+}
+
+.lightbox-text div {
+  color: #e7aab4;
+}
+
+
+/* =========================================
+   زر X
+   ========================================= */
+
+.lightbox-close {
+  position: absolute;
+
+  top: 25px;
+  right: 30px;
+
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.13);
+
+  color: white;
+
+  font-size: 32px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition: 0.2s;
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.25);
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================
+   الأسهم
+   ========================================= */
+
+.lightbox-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 52px;
+  height: 52px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.12);
+
+  color: white;
+
+  font-size: 38px;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition: 0.2s;
+}
+
+.lightbox-arrow:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.lightbox-arrow.prev {
+  right: 25px;
+}
+
+.lightbox-arrow.next {
+  left: 25px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+  .heart-gallery {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 65px 15px;
+  }
+
+  .heart-photo {
+    width: 160px;
+    height: 150px;
+  }
+
+  .memory-info h3 {
+    font-size: 16px;
+  }
+
+  .memory-info p {
+    font-size: 11px;
+  }
+
+  .big-heart img {
+    max-width: 82vw;
+    max-height: 65vh;
+  }
+
+  .lightbox-arrow {
+    width: 42px;
+    height: 42px;
+
+    font-size: 30px;
+  }
+
+  .lightbox-arrow.prev {
+    right: 10px;
+  }
+
+  .lightbox-arrow.next {
+    left: 10px;
+  }
+}
+
+
+@media (max-width: 430px) {
+
+  .heart-gallery {
+    gap: 55px 5px;
+  }
+
+  .heart-photo {
+    width: 140px;
+    height: 130px;
+  }
+
+  .big-heart img {
+    max-width: 88vw;
+    max-height: 60vh;
+  }
+}
