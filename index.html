@@ -75,19 +75,103 @@
       </div>
     </section>
 
-    <section class="gallery reveal">
-      <div class="section-head">
-        <span>OUR MEMORIES</span>
-        <h2>صور من حكايتنا 📸</h2>
-        <p> <b>BA7Bk Ya Wala </b>.</p>
+    <section class="gallery reveal" id="memories">
+  <div class="section-head">
+    <span>OUR MEMORIES</span>
+    <h2>صور من حكايتنا ❤️</h2>
+    <p>كل صورة حكاية… وكل حكاية ليها مكان في قلبي.</p>
+  </div>
+
+  <div class="heart-gallery">
+
+    <article class="heart-memory">
+      <button class="heart-photo" data-image="images/photo1.jpg"
+              data-date="من أول الحكاية"
+              data-caption="أجمل بداية لأجمل حكاية ❤️">
+        <img src="images/photo1.jpg" alt="ذكرياتنا">
+      </button>
+      <div class="memory-info">
+        <span>01</span>
+        <h3>أول الحكاية</h3>
+        <p>اللحظة اللي بدأت منها كل حاجة.</p>
       </div>
-      <div class="photo-grid">
-        <figure class="photo large"><img src="images/photo2.jpg" alt="ذكرياتنا"><figcaption> ضحكة من اللي بحبها</figcaption></figure>
-        <figure class="photo"><img src="images/photo1.jpg" alt="ذكرياتنا"><figcaption>أول الذكريات ❤️</figcaption></figure>
-        <figure class="photo"><img src="images/photo3.jpg" alt="ذكرياتنا"><figcaption>يوم مميز</figcaption></figure>
-        <figure class="photo"><img src="images/photo4.jpg" alt="ذكرياتنا"><figcaption>مع بعض</figcaption></figure>
-        <figure class="photo wide"><img src="images/photo6.jpg" alt="ذكرياتنا"><figcaption>والحكاية لسه مكملة…</figcaption></figure>
+    </article>
+
+    <article class="heart-memory">
+      <button class="heart-photo" data-image="images/photo2.jpg"
+              data-date="ذكرى جميلة"
+              data-caption="ومع كل يوم كانت الحكاية بتحلى أكتر ❤️">
+        <img src="images/photo2.jpg" alt="ذكرياتنا">
+      </button>
+      <div class="memory-info">
+        <span>02</span>
+        <h3>ذكرياتنا</h3>
+        <p>تفاصيل صغيرة بس عمرها ما هتتنسي.</p>
       </div>
+    </article>
+
+    <article class="heart-memory">
+      <button class="heart-photo" data-image="images/photo3.jpg"
+              data-date="لحظة مميزة"
+              data-caption="في صور بتفكرني قد إيه أنا محظوظ بيكي.">
+        <img src="images/photo3.jpg" alt="ذكرياتنا">
+      </button>
+      <div class="memory-info">
+        <span>03</span>
+        <h3>لحظة مميزة</h3>
+        <p>يوم من الأيام اللي نفسي تتكرر.</p>
+      </div>
+    </article>
+
+    <article class="heart-memory">
+      <button class="heart-photo" data-image="images/photo4.jpg"
+              data-date="مع بعض"
+              data-caption="المهم مش المكان… المهم إننا كنا مع بعض.">
+        <img src="images/photo4.jpg" alt="ذكرياتنا">
+      </button>
+      <div class="memory-info">
+        <span>04</span>
+        <h3>مع بعض</h3>
+        <p>أحلى حاجة في أي مكان هي وجودك.</p>
+      </div>
+    </article>
+
+    <article class="heart-memory">
+      <button class="heart-photo" data-image="images/photo5.jpg"
+              data-date="واللي جاي"
+              data-caption="دي مش النهاية… دي مجرد بداية لحاجات أجمل ❤️">
+        <img src="images/photo5.jpg" alt="ذكرياتنا">
+      </button>
+      <div class="memory-info">
+        <span>05</span>
+        <h3>واللي جاي أجمل</h3>
+        <p>لسه عندنا صور وذكريات كتير نعملها.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- الصورة الكبيرة -->
+<div class="photo-lightbox" id="photoLightbox">
+  <button class="lightbox-close" id="lightboxClose">×</button>
+
+  <button class="lightbox-arrow prev" id="prevPhoto">‹</button>
+
+  <div class="lightbox-content">
+    <div class="big-heart">
+      <img id="lightboxImage" src="" alt="صورة من ذكرياتنا">
+    </div>
+
+    <div class="lightbox-text">
+      <span id="lightboxDate"></span>
+      <h3 id="lightboxCaption"></h3>
+      <div>♥</div>
+    </div>
+  </div>
+
+  <button class="lightbox-arrow next" id="nextPhoto">›</button>
+</div>
     </section>
 
     <section class="letter reveal">
