@@ -3,7 +3,7 @@
 // YYYY, MM-1, DD, HH, MM
 // مثال: 2025, 8, 10, 0, 0
 // =========================
-const START_DATE = new Date(2024, 10, 10, 0, 0);
+const START_DATE = new Date("10/10/2024");
 
 const pad = n => String(n).padStart(2,"0");
 function updateCounter(){
