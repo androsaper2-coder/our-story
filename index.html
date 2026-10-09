@@ -26,7 +26,7 @@
       <div class="scroll-hint">اسحب لتحت ↓</div>
     </section>
 
-    <section class="story reveal" id="story">
+    <section hidden class="story reveal" id="story">
       <div class="section-head">
         <span>OUR STORY</span>
         <h2>كل حاجة بدأت بلحظة</h2>
@@ -61,7 +61,7 @@
       </div>
     </section>
 
-    <section class="counter reveal">
+    <section hidden class="counter reveal" id="counter">
       <div class="counter-inner">
         <span>TIME WE'VE SHARED</span>
         <h2>من يوم ما بدأت حكايتنا</h2>
@@ -75,7 +75,7 @@
       </div>
     </section>
 
-    <section class="gallery reveal" id="memories">
+    <section hidden class="gallery reveal" id="memories">
   <div class="section-head">
     <span>OUR MEMORIES</span>
     <h2>صور من حكايتنا ❤️</h2>
@@ -85,10 +85,10 @@
   <div class="heart-gallery">
 
     <article class="heart-memory">
-      <button class="heart-photo" data-image="images/photo1.jpg"
+      <button class="heart-photo" data-image="images/photo1.webp"
               data-date="من أول الحكاية"
               data-caption="أجمل بداية لأجمل حكاية ❤️">
-        <img src="images/photo1.jpg" alt="ذكرياتنا">
+        <img src="images/photo1.webp" alt="ذكرياتنا">
       </button>
       <div class="memory-info">
         <span>01</span>
@@ -98,10 +98,10 @@
     </article>
 
     <article class="heart-memory">
-      <button class="heart-photo" data-image="images/photo2.jpg"
+      <button class="heart-photo" data-image="images/photo2.webp"
               data-date="ذكرى جميلة"
               data-caption="ومع كل يوم كانت الحكاية بتحلى أكتر ❤️">
-        <img src="images/photo2.jpg" alt="ذكرياتنا">
+        <img src="images/photo2.webp" alt="ذكرياتنا">
       </button>
       <div class="memory-info">
         <span>02</span>
@@ -111,10 +111,10 @@
     </article>
 
     <article class="heart-memory">
-      <button class="heart-photo" data-image="images/photo3.jpg"
+      <button class="heart-photo" data-image="images/photo3.webp"
               data-date="لحظة مميزة"
               data-caption="في صور بتفكرني قد إيه أنا محظوظ بيكي.">
-        <img src="images/photo3.jpg" alt="ذكرياتنا">
+        <img src="images/photo3.webp" alt="ذكرياتنا">
       </button>
       <div class="memory-info">
         <span>03</span>
@@ -124,10 +124,10 @@
     </article>
 
     <article class="heart-memory">
-      <button class="heart-photo" data-image="images/photo4.jpg"
+      <button class="heart-photo" data-image="images/photo4.webp"
               data-date="مع بعض"
               data-caption="المهم مش المكان… المهم إننا كنا مع بعض.">
-        <img src="images/photo4.jpg" alt="ذكرياتنا">
+        <img src="images/photo4.webp" alt="ذكرياتنا">
       </button>
       <div class="memory-info">
         <span>04</span>
@@ -137,10 +137,10 @@
     </article>
 
     <article class="heart-memory">
-      <button class="heart-photo" data-image="images/photo5.jpg"
+      <button class="heart-photo" data-image="images/photo5.webp"
               data-date="واللي جاي"
               data-caption="دي مش النهاية… دي مجرد بداية لحاجات أجمل ❤️">
-        <img src="images/photo5.jpg" alt="ذكرياتنا">
+        <img src="images/photo5.webp" alt="ذكرياتنا">
       </button>
       <div class="memory-info">
         <span>05</span>
@@ -174,7 +174,7 @@
 </div>
     </section>
 
-    <section class="letter reveal">
+    <section hidden class="letter reveal" id="letter">
       <div class="letter-card">
         <span>FOR YOU, ALWAYS</span>
         <h2>رسالة ليكي 💌</h2>
@@ -195,7 +195,7 @@
       </div>
     </section>
 
-    <section class="future reveal">
+    <section hidden class="future reveal" id="future">
       <div class="section-head">
         <span>THE NEXT CHAPTER</span>
         <h2>واللي جاي أجمل 🤍</h2>
@@ -209,7 +209,7 @@
     </section>
 
     <section class="final reveal">
-      <div class="final-content">
+      <div hidden id="finalContent" class="final-content">
         <div class="ring">∞</div>
         <h2>You. Me. Forever.</h2>
         <p>مهما اتغيرت الأيام، أهم حاجة إننا نفضل إحنا.</p>
@@ -219,7 +219,7 @@
     </section>
   </main>
 
-  <footer>Made with love, for our story ❤️</footer>
+  <footer id="footer" hidden>Made with love, for our story ❤️</footer>
   <script src="script.js"></script>
 </body>
 </html>
